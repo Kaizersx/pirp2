@@ -11,6 +11,11 @@ public class Billionaires {
     @GeneratedValue(strategy = GenerationType.AUTO)
    Integer id;
 
+    public Billionaires(String first_name, String last_name, String career) {
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.career = career;
+    }
 
     String first_name;
 

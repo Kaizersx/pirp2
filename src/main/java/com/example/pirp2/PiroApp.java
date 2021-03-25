@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Pirp2Application {
+public class PiroApp {
 
     public static void main(String[] args) {
-        SpringApplication.run(Pirp2Application.class, args);
+        SpringApplication.run(PiroApp.class, args);
     }
 
 }

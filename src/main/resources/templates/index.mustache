@@ -1,29 +1,74 @@
 <!doctype html>
 <html lang="en">
 <head>
+
+
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <style>
+        th {border-style: solid;border-color: black}
+        td {border-style: solid;border-color: black;border-width: thin}
+
+     </style>
+
+
 </head>
 <body>
-<h1> {{#FIO}}
+<h1 style="text-align: center">ПиРО<span style="font-size: medium">(поиск и решение ошибок)</span></h1>
 
-    {{id}}
-    <p>{{first_name}}</p>
-    <p>{{last_name}}</p>
-    <p>{{career}}</p>
+<P><a href="/addrecord">Добавить</a>  </P>
+<div style="margin-top: 170px;">
+<table >
+    <tr>
+        <th>description</th>
+        <th>tag</th>
+        <th>naumen</th>
+        <th>jiraID</th>
+        <th>oldjiraID</th>
+    </tr>
+ {{#FIO}}
 
+
+<tr>
+    <td>{{description}}</td>
+    <td>{{tag}}</td>
+    <td>{{naumen}}</td>
+    <td>{{jiraID}}</td>
+    <td>{{oldjiraID}}</td>
+    <td><a href="edit/{{id}}">edit</a></td>
+</tr>
 {{/FIO}}
+</table>
+</div>
+<br>
+<br>
+<br>
+<div>
+    <h3 style="text-align: center"> Edit record: </h3>
+    <table>
+        <form action="/editid" method="post">
+
+
+            <tr>
+                <input type="hidden" name="id" value="{{#editFIO}}{{id}}{{/editFIO}}" >
+                <td><input type="text"  name="description" value="{{#editFIO}}{{description}}{{/editFIO}}"></td>
+
+                <td><button type="submit">edit</button></td>
+            </tr>
+
+        </form>
+
+    </table>
+
+</div>
 
 
 
 
 
-
-
-
-</h1>
 </body>
 </html>

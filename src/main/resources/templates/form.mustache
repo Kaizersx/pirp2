@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+        .textform{clear:both; text-align:right; line-height:25px;}
+        label {float:left;padding-right:10px;}
+        .divtextform {float:left}
+    </style>
+</head>
+<body>
+
+<h3>Please fill the form</h3>
+
+<div class="divtextform">
+<form action="fillform"  method="post" class="textform">
+
+    <label for="description">Описание:</label> <input type="text" name="description" >
+    <br>
+    <label for="tag">Ключевое слово:</label> <input type="text" name="tag" >
+    <br>
+    <label for="naumen">Номер в Naumen:</label> <input type="text" name="naumen" >
+    <br>
+    <label for="jiraID">ID в JIRA:</label> <input type="text" name="jiraID">
+    <br>
+    <label for="oldJiraID">ID в JIRA (архив):</label> <input type="text" name="oldJiraID" >
+    <br>
+    <button type="submit">add</button>
+</form>
+</div>
+</body>
+</html>

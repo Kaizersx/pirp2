@@ -16,10 +16,10 @@
 </head>
 <body>
 
-<h3>Please fill the form</h3>
+<h3>Пожалуйста заполните форму:</h3>
 
 <div class="divtextform">
-<form action="fillform"  method="post" class="textform">
+<form action="fillform" enctype="multipart/form-data" method="post"  class="textform">
 
     <label for="description">Описание:</label> <input type="text" name="description" >
     <br>
@@ -31,7 +31,8 @@
     <br>
     <label for="oldJiraID">ID в JIRA (архив):</label> <input type="text" name="oldJiraID" >
     <br>
-    <button type="submit">add</button>
+    <label for="file">изображение:</label> <input type="file" name="file" >
+    <button type="submit">добавить</button>
 </form>
 </div>
 </body>

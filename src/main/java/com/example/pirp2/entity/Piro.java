@@ -2,6 +2,7 @@ package com.example.pirp2.entity;
 
 import javax.persistence.*;
 
+
 @Entity
 @Table
 public class Piro {
@@ -12,13 +13,37 @@ public class Piro {
     Integer id;
 
 
-    public Piro(String description, String tag, String naumen, String jiraID, String oldjiraID) {
+    public String getDocname() {
+        return docname;
+    }
+
+    public void setDocname(String docname) {
+        this.docname = docname;
+    }
+
+    public String getDoctype() {
+        return doctype;
+    }
+
+    public void setDoctype(String doctype) {
+        this.doctype = doctype;
+    }
+
+    public Piro(String description, String tag, String naumen, String jiraID, String oldjiraID, byte data[], String docname, String doctype) {
         this.description = description;
         this.tag = tag;
         this.naumen = naumen;
         this.jiraID = jiraID;
         this.oldjiraID = oldjiraID;
+        this.data=data;
+        this.docname=docname;
+        this.doctype=doctype;
+
     }
+
+
+    String docname;
+    String doctype;
 
     String description;
 
@@ -31,7 +56,16 @@ public class Piro {
 
     String oldjiraID;
 
+    @Lob
+    byte data[];
 
+    public byte[] getData() {
+        return data;
+    }
+
+    public void setData(byte[] data) {
+        this.data = data;
+    }
 
     public String getNaumen() {
         return naumen;

@@ -20,15 +20,16 @@
 <body>
 <h1 style="text-align: center">ПиРО<span style="font-size: medium">(поиск и решение ошибок)</span></h1>
 
-<P><a href="/addrecord">Добавить</a>  </P>
+<P><a href="/addrecord">Добавить</a></P>
+<P><a href="/search">Поиск</a></P>
 <div style="margin-top: 170px;">
 <table >
     <tr>
-        <th>description</th>
-        <th>tag</th>
-        <th>naumen</th>
-        <th>jiraID</th>
-        <th>oldjiraID</th>
+        <th>Описание</th>
+        <th>Ключевое слово</th>
+        <th>Номер заявки(Naumen)</th>
+        <th>Номер задачи (Jira)</th>
+        <th>Старый номер задачи(Jira)</th>
     </tr>
  {{#FIO}}
 
@@ -39,7 +40,9 @@
     <td>{{naumen}}</td>
     <td>{{jiraID}}</td>
     <td>{{oldjiraID}}</td>
-    <td><a href="edit/{{id}}">edit</a></td>
+    <td><img src="/downloadfile/{{id}}"  width="250" height="250"></td>
+    <td><a href="edit/{{id}}">изменить</a></td>
+    <td><a href="delete/{{id}}">удалить</a></td>
 </tr>
 {{/FIO}}
 </table>
@@ -48,18 +51,29 @@
 <br>
 <br>
 <div>
-    <h3 style="text-align: center"> Edit record: </h3>
+    <h3 style="text-align: center"> Изменить запись: </h3>
     <table>
         <form action="/editid" method="post">
-
+            <tr>
+                <th>Описание</th>
+                <th>Ключевое слово</th>
+                <th>Номер заявки(Naumen)</th>
+                <th>Номер задачи (Jira)</th>
+                <th>Старый номер задачи(Jira)</th>
+            </tr>
 
             <tr>
                 <input type="hidden" name="id" value="{{#editFIO}}{{id}}{{/editFIO}}" >
                 <td><input type="text"  name="description" value="{{#editFIO}}{{description}}{{/editFIO}}"></td>
-
-                <td><button type="submit">edit</button></td>
+                <td><input type="text"  name="tag" value="{{#editFIO}}{{tag}}{{/editFIO}}"></td>
+                <td><input type="text"  name="naumen" value="{{#editFIO}}{{naumen}}{{/editFIO}}"></td>
+                <td><input type="text"  name="jiraID" value="{{#editFIO}}{{jiraID}}{{/editFIO}}"></td>
+                <td><input type="text"  name="oldjiraID" value="{{#editFIO}}{{oldjiraID}}{{/editFIO}}"></td>
+                <td><button type="submit">изменить</button></td>
             </tr>
 
+            <br>
+            <p style="color: crimson">{{warning}}</p>
         </form>
 
     </table>

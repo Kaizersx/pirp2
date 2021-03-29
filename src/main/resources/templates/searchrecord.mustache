@@ -6,30 +6,38 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <style>
+        th {border-style: solid;border-color: black}
+        td {border-style: solid;border-color: black;border-width: thin}
+
+    </style>
 </head>
 <body>
 
 <div>
-    <h3 style="text-align: center">Search record:</h3>
+    <a href="/"><b>вернуться на главную</b></a> <h3 style="text-align: center">Поиск записей:</h3>
     <br>
     <br>
     <form action="srctag" method="post">
 
-        <label for="tag">enter tag:</label><input type="text" name="tag">
+        <label for="tag">Поиск по ключевому слову:</label><input type="text" name="tag">
         <br>
-        <button type="submit">search</button>
+        <button type="submit">поиск</button>
 
     </form>
 </div>
-
+<br>
+<br>
+<br>
 <div>
 <table>
     <tr>
-        <th>description</th>
-        <th>tag</th>
-        <th>naumen</th>
-        <th>jiraID</th>
-        <th>oldjiraID</th>
+        <th>Описание</th>
+        <th>Ключевое слово</th>
+        <th>Номер заявки(Naumen)</th>
+        <th>Номер задачи (Jira)</th>
+        <th>Старый номер задачи(Jira)</th>
     </tr>
  {{#FIO}}
 
@@ -39,7 +47,8 @@
     <td>{{naumen}}</td>
     <td>{{jiraID}}</td>
     <td>{{oldjiraID}}</td>
-    <td><a href="edit/{{id}}">edit</a></td>
+    <td><img src="/downloadfile/{{id}}"  width="250" height="250"></td>
+    <td><a href="edit/{{id}}">изменить</a></td>
 </tr>
 {{/FIO}}
 </table>
